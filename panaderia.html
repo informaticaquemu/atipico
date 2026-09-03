@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material-Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Panadería & Rotisería - ATÍPICO</title>
+    <style>
+        .brand-blue-bg { background-color: #1a4388 !important; }
+        .brand-orange-bg { background-color: #f37023 !important; }
+        .brand-orange-text { color: #f37023 !important; }
+        .precio-badge {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #f37023;
+        }
+        .card-producto {
+            border-radius: 10px;
+            min-height: 220px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <nav class="brand-blue-bg">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo hide-on-small-only">ATÍPICO</a>
+            <ul class="right">
+                <li><a href="index.html"><i class="material-icons left">arrow_back</i> Volver al Inicio</a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=5492302696494" target="_blank" class="btn brand-orange-bg">Hacer Pedido</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row section center">
+            <h3 class="brand-orange-text bold"><i class="material-icons medium">bakery_dining</i> Panadería & Rotisería</h3>
+            <p class="flow-text">Consultá nuestros productos frescos y precios actualizados.</p>
+        </div>
+
+        <!-- Contenedor donde se cargarán los productos (Estático por ahora, Dinámico con AppSheet después) -->
+        <div class="row" id="catalogo-panaderia">
+            
+            <!-- Ejemplo Producto 1 -->
+            <div class="col s12 m6 l4">
+                <div class="card card-producto z-depth-1">
+                    <div class="card-content">
+                        <span class="card-title bold">Pan Casero / Croissant</span>
+                        <p>Elaboración artesanal fresca diariamente.</p>
+                        <br>
+                        <div class="precio-badge">$ ---</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejemplo Producto 2 -->
+            <div class="col s12 m6 l4">
+                <div class="card card-producto z-depth-1">
+                    <div class="card-content">
+                        <span class="card-title bold">Facturas de Manteca / Grasa</span>
+                        <p>Variedad de facturas tradicionales y hojaldradas.</p>
+                        <br>
+                        <div class="precio-badge">$ ---</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejemplo Producto 3 -->
+            <div class="col s12 m6 l4">
+                <div class="card card-producto z-depth-1">
+                    <div class="card-content">
+                        <span class="card-title bold">Menú del Día / Milanesas</span>
+                        <p>Rotisería con opciones para el almuerzo.</p>
+                        <br>
+                        <div class="precio-badge">$ ---</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/panaderia.js"></script>
+</body>
+</html>
