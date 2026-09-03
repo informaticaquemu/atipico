@@ -2,177 +2,265 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,600i,700|Roboto:400,900" rel="stylesheet">
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATÍPICO - Multirrubro | Quemú Quemú</title>
 
-    <title>ATÍPICO - Multirrubro</title>
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <style>
-        .brand-orange-text { color: #f37023 !important; }
-        .brand-blue-bg { background-color: #1a4388 !important; }
-        .brand-orange-bg { background-color: #f37023 !important; }
-        .card-rubro { border-radius: 12px; transition: transform 0.2s ease; }
-        .card-rubro:hover { transform: translateY(-5px); }
-        .card-destacada { border: 2px solid #f37023; background-color: #fff9f5; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Colores de marca basados en el logo ATÍPICO */
+        .bg-atipico-blue { background-color: #1a4388 !important; }
+        .text-atipico-blue { color: #1a4388 !important; }
+        .bg-atipico-orange { background-color: #f37023 !important; }
+        .text-atipico-orange { color: #f37023 !important; }
+
+        /* Estilos del Hero / Header */
+        .hero-banner {
+            background: linear-gradient(135deg, #1a4388 0%, #0d2857 100%);
+            padding: 70px 0 50px 0;
+            border-bottom: 5px solid #f37023;
+        }
+
+        .logo-img {
+            max-height: 80px;
+            margin-bottom: 15px;
+        }
+
+        /* Tarjetas de Rubros */
+        .rubro-card {
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: 1px solid #eee;
+            padding: 25px 15px;
+        }
+
+        .rubro-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .rubro-card .material-icons {
+            font-size: 52px;
+        }
+
+        /* Tarjeta Destacada de Panadería */
+        .panaderia-featured {
+            background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%);
+            border: 2px solid #f37023;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-destacado {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #f37023;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Botones */
+        .btn-principal {
+            border-radius: 30px;
+            font-weight: 700;
+            padding: 0 30px;
+            box-shadow: 0 4px 12px rgba(243, 112, 35, 0.4);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366 !important;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 25px 0;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar-fixed" id="index">
-        <nav class="sticky brand-blue-bg">
+    <!-- Navegación -->
+    <div class="navbar-fixed">
+        <nav class="bg-atipico-blue">
             <div class="nav-wrapper container">
                 <a href="index.html" class="brand-logo valign-wrapper">
-                    <img src="images/logo.png" class="responsive-img" style="max-height: 45px; margin-right: 10px;" alt="Logo ATÍPICO">
-                    <span>ATÍPICO</span>
+                    <img src="images/logo.png" alt="ATÍPICO" style="max-height: 40px; margin-right: 10px;">
+                    <span style="font-weight: 800; letter-spacing: 1px;">ATÍPICO</span>
                 </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#Inicio">Inicio</a></li>
-                    <li><a href="#Rubros">Rubros</a></li>
-                    <li><a href="panaderia.html" class="btn brand-orange-bg waves-effect waves-light">Panadería y Menú</a></li>
-                    <li><a href="#Contacto">Contacto</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=5492302696494" style="color:#01E675" target="_blank"><i class="material-icons left">phone</i>WhatsApp</a></li>
+                    <li><a href="#rubros">Rubros</a></li>
+                    <li><a href="panaderia.html" class="btn bg-atipico-orange waves-effect waves-light btn-principal">Panadería & Menú</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=5492302696494" target="_blank" class="btn btn-whatsapp waves-effect"><i class="material-icons left">chat</i>WhatsApp</a></li>
                 </ul>
             </div>
         </nav>
     </div>
 
-    <!-- Menú Mobile -->
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="#Inicio">Inicio</a></li>
-        <li><a href="#Rubros">Rubros</a></li>
-        <li><a href="panaderia.html" class="brand-orange-text bold">Panadería y Rotisería</a></li>
-        <li><a href="#Contacto">Contacto</a></li>
-        <li><a href="https://api.whatsapp.com/send?phone=5492302696494" target="_blank">WhatsApp</a></li>
+    <!-- Menú Celulares -->
+    <ul class="sidenav" id="mobile-menu">
+        <li class="center-align style-padding" style="padding: 20px 0;">
+            <img src="images/logo.png" alt="ATÍPICO" style="max-height: 60px;">
+        </li>
+        <li class="divider"></li>
+        <li><a href="#rubros"><i class="material-icons">grid_view</i> Rubros</a></li>
+        <li><a href="panaderia.html" class="text-atipico-orange bold"><i class="material-icons text-atipico-orange">bakery_dining</i> Panadería & Precios</a></li>
+        <li><a href="#contacto"><i class="material-icons">place</i> Contacto</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=5492302696494" target="_blank"><i class="material-icons" style="color:#25D366;">chat</i> WhatsApp</a></li>
     </ul>
 
-    <!-- Banner Principal -->
-    <section class="banner brand-blue-bg valign-wrapper" style="padding: 60px 0;">
+    <!-- Hero / Encabezado Principal -->
+    <section class="hero-banner center-align white-text">
         <div class="container">
-            <div class="row">
-                <div class="col s12 center">
-                    <h2 class="white-text bold">ATÍPICO</h2>
-                    <h5 class="white-text">Multirrubro • Calidad • Variedad</h5>
-                    <p class="grey-text text-lighten-2">Todo lo que necesitás en un sólo lugar.</p>
+            <img src="images/logo.png" alt="ATÍPICO Multirrubro" class="logo-img responsive-img">
+            <h4 style="font-weight: 800; margin: 10px 0 5px 0;">MULTIRRUBRO • CALIDAD • VARIEDAD</h4>
+            <p class="flow-text grey-text text-lighten-3" style="max-width: 700px; margin: 0 auto 25px auto;">
+                Todo lo que buscás para tu día a día en Quemú Quemú, reunido en un solo lugar.
+            </p>
+            <a href="panaderia.html" class="btn-large bg-atipico-orange waves-effect waves-light btn-principal">
+                <i class="material-icons left">restaurant_menu</i> Ver Panadería y Precios
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Rubros -->
+    <main class="container" id="rubros" style="padding-top: 50px;">
+        <div class="center-align" style="margin-bottom: 40px;">
+            <h4 class="text-atipico-blue bold" style="margin-bottom: 5px;">Nuestros Rubros</h4>
+            <p class="grey-text text-darken-1">Explorá todo lo que tenemos disponible para vos</p>
+        </div>
+
+        <div class="row">
+
+            <!-- TARJETA DESTACADA: PANADERÍA Y ROTISERÍA -->
+            <div class="col s12 m6 l4" style="margin-bottom: 30px;">
+                <div class="rubro-card panaderia-featured center-align">
+                    <span class="badge-destacado">Destacado</span>
+                    <i class="material-icons text-atipico-orange">bakery_dining</i>
+                    <h5 class="bold text-atipico-blue" style="margin: 15px 0 10px 0;">Panadería & Rotisería</h5>
+                    <p class="grey-text text-darken-1">Panificados frescos, facturas, hojaldres, sándwiches y comidas preparadas al día.</p>
                     <br>
-                    <a href="panaderia.html" class="btn-large brand-orange-bg waves-effect waves-light pulse">
-                        <i class="material-icons left">restaurant_menu</i> Ver Panadería y Precios
+                    <a href="panaderia.html" class="btn bg-atipico-orange white-text waves-effect waves-light btn-principal width-100">
+                        Ver Menú y Precios
                     </a>
+                </div>
+            </div>
+
+            <!-- Informática -->
+            <div class="col s12 m6 l4" style="margin-bottom: 30px;">
+                <div class="rubro-card center-align">
+                    <i class="material-icons text-atipico-blue">devices</i>
+                    <h5 class="bold text-atipico-blue" style="margin: 15px 0 10px 0;">Informática</h5>
+                    <p class="grey-text text-darken-1">Insumos de computación, accesorios, servicio técnico, armado y reparación de equipos.</p>
+                </div>
+            </div>
+
+            <!-- Librería y Papelería -->
+            <div class="col s12 m6 l4" style="margin-bottom: 30px;">
+                <div class="rubro-card center-align">
+                    <i class="material-icons text-atipico-blue">menu_book</i>
+                    <h5 class="bold text-atipico-blue" style="margin: 15px 0 10px 0;">Librería</h5>
+                    <p class="grey-text text-darken-1">Artículos escolares, de oficina, impresiones, fotocopias y papelería comercial.</p>
+                </div>
+            </div>
+
+            <!-- Artística -->
+            <div class="col s12 m6 l4" style="margin-bottom: 30px;">
+                <div class="rubro-card center-align">
+                    <i class="material-icons text-atipico-blue">palette</i>
+                    <h5 class="bold text-atipico-blue" style="margin: 15px 0 10px 0;">Artística</h5>
+                    <p class="grey-text text-darken-1">Materiales para arte, pinturas, pinceles, bastidores y elementos para manualidades.</p>
+                </div>
+            </div>
+
+            <!-- Cotillón -->
+            <div class="col s12 m6 l4" style="margin-bottom: 30px;">
+                <div class="rubro-card center-align">
+                    <i class="material-icons text-atipico-blue">celebration</i>
+                    <h5 class="bold text-atipico-blue" style="margin: 15px 0 10px 0;">Cotillón</h5>
+                    <p class="grey-text text-darken-1">Decoración para fiestas, cumpleaños, eventos, globos y artículos festivos.</p>
+                </div>
+            </div>
+
+            <!-- Almacén -->
+            <div class="col s12 m6 l4" style="margin-bottom: 30px;">
+                <div class="rubro-card center-align">
+                    <i class="material-icons text-atipico-blue">storefront</i>
+                    <h5 class="bold text-atipico-blue" style="margin: 15px 0 10px 0;">Almacén</h5>
+                    <p class="grey-text text-darken-1">Abarrotes, golosinas, bebidas y productos esenciales de primera necesidad.</p>
+                </div>
+            </div>
+
+            <!-- Juguetería -->
+            <div class="col s12 m6 l4" style="margin-bottom: 30px;">
+                <div class="rubro-card center-align">
+                    <i class="material-icons text-atipico-blue">toys</i>
+                    <h5 class="bold text-atipico-blue" style="margin: 15px 0 10px 0;">Juguetería</h5>
+                    <p class="grey-text text-darken-1">Juegos de mesa, juguetes para todas las edades y opciones para regalos.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Ubicación y Contacto -->
+    <section class="bg-white" id="contacto" style="padding: 50px 0; border-top: 1px solid #eee;">
+        <div class="container">
+            <div class="row valign-wrapper flex-on-small">
+                <div class="col s12 m6">
+                    <h4 class="text-atipico-blue bold" style="margin-bottom: 20px;">Visitanos o Consultanos</h4>
+                    <p class="flow-text grey-text text-darken-2" style="font-size: 1.1rem;">
+                        <i class="material-icons left text-atipico-orange">place</i> Manuel Bárbulo 624 — Quemú Quemú, La Pampa
+                    </p>
+                    <p class="flow-text grey-text text-darken-2" style="font-size: 1.1rem;">
+                        <i class="material-icons left text-atipico-orange">phone</i> 2302 696494
+                    </p>
+                    <p class="flow-text grey-text text-darken-2" style="font-size: 1.1rem;">
+                        <i class="material-icons left text-atipico-orange">email</i> informaticaqquemu@gmail.com
+                    </p>
+                    <br>
+                    <a href="https://api.whatsapp.com/send?phone=5492302696494" target="_blank" class="btn-large btn-whatsapp waves-effect">
+                        <i class="material-icons left">chat</i> Enviar un WhatsApp
+                    </a>
+                </div>
+                <div class="col s12 m6" style="margin-top: 25px;">
+                    <div class="z-depth-1" style="border-radius: 12px; overflow: hidden;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6450.4660143872725!2d-63.566876086203926!3d-36.06342040476331!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x59587f5c0762e4d!2sInformatica+Quemu!5e0!3m2!1ses!2sar!4v1535988650422" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Presentación -->
-    <div class="container" id="Inicio">
-        <div class="row section">
-            <div class="col s12 center">
-                <h3 class="brand-blue-text bold">¡Bienvenidos a ATÍPICO!</h3>
-                <p class="flow-text">Nos renovamos para ofrecerte una solución integral en Quemú Quemú. Combinamos nuestra trayectoria técnica con una amplia variedad de rubros comerciales para cubrir todas tus necesidades diarias.</p>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Sección Rubros -->
-        <div class="row section" id="Rubros">
-            <h3 class="center brand-blue-text bold">Nuestros Rubros</h3>
-            <br>
-
-            <!-- Card Destacada Panadería -->
-            <div class="col s12 m6 l4">
-                <div class="card card-rubro card-destacada z-depth-2">
-                    <div class="card-content center">
-                        <i class="material-icons large brand-orange-text">bakery_dining</i>
-                        <span class="card-title bold">Panadería & Rotisería</span>
-                        <p>Panificados artesanales, facturas, sándwiches, minutas y platos preparados del día.</p>
-                    </div>
-                    <div class="card-action center">
-                        <a href="panaderia.html" class="btn brand-orange-bg white-text waves-effect">Ver Catálogo y Precios</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Informática -->
-            <div class="col s12 m6 l4">
-                <div class="card card-rubro z-depth-1">
-                    <div class="card-content center">
-                        <i class="material-icons large brand-blue-text">computer</i>
-                        <span class="card-title bold">Informática</span>
-                        <p>Venta de insumos, reparación de PCs, notebooks, impresoras y servicios de programación.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Librería y Artística -->
-            <div class="col s12 m6 l4">
-                <div class="card card-rubro z-depth-1">
-                    <div class="card-content center">
-                        <i class="material-icons large brand-blue-text">menu_book</i>
-                        <span class="card-title bold">Librería y Artística</span>
-                        <p>Artículos escolares, de oficina, papelería comercial y materiales para arte y manualidades.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cotillón y Juguetería -->
-            <div class="col s12 m6 l4">
-                <div class="card card-rubro z-depth-1">
-                    <div class="card-content center">
-                        <i class="material-icons large brand-blue-text">celebration</i>
-                        <span class="card-title bold">Cotillón y Juguetería</span>
-                        <p>Todo para tus festejos, cumpleaños, decoración, eventos y juguetes para todas las edades.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Almacén -->
-            <div class="col s12 m6 l4">
-                <div class="card card-rubro z-depth-1">
-                    <div class="card-content center">
-                        <i class="material-icons large brand-blue-text">shopping_cart</i>
-                        <span class="card-title bold">Almacén</span>
-                        <p>Productos de primera necesidad, golosinas, bebidas y artículos esenciales para el hogar.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Contacto -->
-        <div class="row section" id="Contacto">
-            <h3 class="brand-blue-text bold center">Ubicación y Contacto</h3>
-            <div class="col s12 m6">
-                <br>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6450.4660143872725!2d-63.566876086203926!3d-36.06342040476331!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x59587f5c0762e4d!2sInformatica+Quemu!5e0!3m2!1ses!2sar!4v1535988650422" width="100%" height="350" frameborder="0" style="border:0; border-radius:8px;" allowfullscreen></iframe>
-            </div>
-            <div class="col s12 m6">
-                <br>
-                <h5><strong>ATÍPICO Multirrubro</strong></h5>
-                <p><i class="material-icons left brand-orange-text">place</i> Manuel Bárbulo 624 - Quemú Quemú, La Pampa</p>
-                <p><i class="material-icons left brand-orange-text">phone</i> 2302 696494</p>
-                <p><i class="material-icons left brand-orange-text">email</i> informaticaqquemu@gmail.com</p>
-                <br>
-                <a href="https://api.whatsapp.com/send?phone=5492302696494" class="btn-large brand-blue-bg waves-effect waves-light" target="_blank">
-                    <i class="material-icons left">chat</i> Consultar por WhatsApp
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="page-footer brand-blue-bg">
+    <!-- Pie de página -->
+    <footer class="bg-atipico-blue white-text center-align">
         <div class="container">
-            <div class="row">
-                <div class="col s12 center">
-                    <h6>ATÍPICO Multirrubro • Quemú Quemú - La Pampa</h6>
-                </div>
-            </div>
+            <p style="margin: 0;"><strong>ATÍPICO Multirrubro</strong> • Manuel Bárbulo 624, Quemú Quemú, La Pampa</p>
         </div>
     </footer>
 
@@ -180,7 +268,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
         });
     </script>
 </body>
